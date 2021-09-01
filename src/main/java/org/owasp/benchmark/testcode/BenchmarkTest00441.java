@@ -48,7 +48,8 @@ public class BenchmarkTest00441 extends HttpServlet {
 		String bar = thing.doSomething(param);
 		
 		
-		String sql = "INSERT INTO users (username, password) VALUES ('foo','"+ bar + "')";
+		//String sql = "INSERT INTO users (username, password) VALUES ('foo','"+ bar + "')";
+		String sql = "INSERT INTO users (username, password) VALUES ('foo','123456')";
 				
 		try {
 			java.sql.Statement statement = org.owasp.benchmark.helpers.DatabaseHelper.getSqlStatement();
