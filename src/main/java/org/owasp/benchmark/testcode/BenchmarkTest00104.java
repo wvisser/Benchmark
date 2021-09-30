@@ -65,7 +65,7 @@ public class BenchmarkTest00104 extends HttpServlet {
 		
 		// Simple if statement that assigns constant to bar on true condition
 		int num = 86;
-		if ( (7*42) - num > 200 )
+		if ( (7*42) - 10*num > 200 )
 		   bar = "This_should_always_happen"; 
 		else bar = param;
 		
