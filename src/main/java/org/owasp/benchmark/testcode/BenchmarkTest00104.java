@@ -62,13 +62,17 @@ public class BenchmarkTest00104 extends HttpServlet {
 		
 		
 		String bar;
+		String foo = "Something";
 		
 		// Simple if statement that assigns constant to bar on true condition
-		int num = 86;
-		if ( (7*42) - num > 200 )
-		   bar = "This_should_always_happen"; 
-		else bar = param;
+		//int num = 86;
+		//if ( (7*42) - num > 200 )
+		//   bar = "This_should_always_happen"; 
+		//else bar = param;
 		
+		if (foo.equals("Something"))
+			bar = "This_should_always_happen";
+		else bar = param;
 		
 		try {
 	        String sql = "SELECT * from USERS where USERNAME='foo' and PASSWORD='" + bar + "'";
