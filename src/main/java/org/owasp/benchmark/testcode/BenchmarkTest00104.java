@@ -65,19 +65,22 @@ public class BenchmarkTest00104 extends HttpServlet {
 		
 		// Simple if statement that assigns constant to bar on true condition
 		int num = 86;
-		if ( (7*42) - num > 200 )
+		boolean cond = bar.length() > 10;
+		if ( cond )
 		   bar = "This_should_always_happen"; 
 		else bar = param;
 		
 		
 		try {
+			if (cond) {
 	        String sql = "SELECT * from USERS where USERNAME='foo' and PASSWORD='" + bar + "'";
-	
+			
 			org.owasp.benchmark.helpers.DatabaseHelper.JDBCtemplate.batchUpdate(sql);
 			response.getWriter().println(
 				"No results can be displayed for query: " + org.owasp.esapi.ESAPI.encoder().encodeForHTML(sql) + "<br>"
 				+ " because the Spring batchUpdate method doesn't return results."
 			);
+			}
 		} catch (org.springframework.dao.DataAccessException e) {
 			if (org.owasp.benchmark.helpers.DatabaseHelper.hideSQLErrors) {
         		response.getWriter().println(
